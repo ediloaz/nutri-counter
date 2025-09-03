@@ -3,9 +3,9 @@ import { filter, findIndex, cloneDeep } from 'lodash'
 
 import Paper from '@mui/material/Paper';
 
-import { CUSTOM_FOODS_ID } from '../../constants/categories'
-import CaloriesItem from "../CaloriesItem/CaloriesItem"
-import CaloriesTable from "../CaloriesTable/CaloriesTable"
+import { CUSTOM_FOODS_ID } from 'constants/categories'
+import CaloriesItem from "components/CaloriesItem/CaloriesItem"
+import CaloriesTable from "components/CaloriesTable/CaloriesTable"
 
 import "./caloriesItemList.css"
 import { Typography } from '@mui/material';

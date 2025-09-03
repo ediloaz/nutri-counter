@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Face2, Face4 } from '@mui/icons-material';
 
-import BackButton from "../../components/BackButton/BackButton"
-import { AppContext } from '../../context/AppContext';
+import BackButton from "components/BackButton/BackButton"
+import { AppContext } from 'context/AppContext';
 
 import './changeUser.css'
 

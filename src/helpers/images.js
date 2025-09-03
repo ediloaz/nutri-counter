@@ -1,6 +1,6 @@
 import moment from "moment"
 
-import { BOTTOM_BACKGROUND } from '../constants/images'
+import { BOTTOM_BACKGROUND } from 'constants/images'
 
 export const getBottomBackground = () => {
     const hourNow = moment(new Date()).hour()

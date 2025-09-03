@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext } from 'react'
-import { AppContext } from '../../context/AppContext';
+import { AppContext } from 'context/AppContext';
 
 import { LinearProgress } from '@mui/material';
 
-import BackButton from "../../components/BackButton/BackButton"
+import BackButton from "components/BackButton/BackButton"
 
-import { CATEGORIES } from '../../constants/categories'
-import { calcCategoryCalc } from '../../helpers/categories';
+import { CATEGORIES } from 'constants/categories'
+import { calcCategoryCalc } from 'helpers/categories';
 
 import './summary.css'
 

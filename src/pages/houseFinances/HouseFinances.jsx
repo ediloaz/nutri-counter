@@ -14,12 +14,12 @@ import IconButton from '@mui/material/IconButton';
 import FormControl from '@mui/material/FormControl';
 import InputAdornment from "@mui/material/InputAdornment";
 
-import { CATEGORIES } from "../../constants/categories";
-import Header from "../../components/Header/Header";
-import { AppContext } from "../../context/AppContext";
+import { CATEGORIES } from "constants/categories";
+import Header from "components/Header/Header";
+import { AppContext } from "context/AppContext";
 
-import { getCategoryNameById, calcCategoryCalc } from "../../helpers/categories";
-import { FOOD_TIMES } from "../../constants/foodTimes";
+import { getCategoryNameById, calcCategoryCalc } from "helpers/categories";
+import { FOOD_TIMES } from "constants/foodTimes";
 
 import "./houseFinances.css";
 

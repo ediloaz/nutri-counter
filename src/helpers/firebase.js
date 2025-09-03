@@ -1,7 +1,7 @@
 import moment from "moment";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 
-import { EMPTY_DAILY } from "../constants/daily";
+import { EMPTY_DAILY } from "constants/daily";
 
 const DAILY_COLLECTION = 'daily'
 

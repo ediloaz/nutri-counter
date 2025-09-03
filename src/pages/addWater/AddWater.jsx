@@ -2,11 +2,11 @@ import { useEffect, useState, useContext } from 'react'
 
 import { LinearProgress } from '@mui/material';
 
-import BackButton from "../../components/BackButton/BackButton"
-import { AppContext } from '../../context/AppContext';
+import BackButton from "components/BackButton/BackButton"
+import { AppContext } from 'context/AppContext';
 
-import { CATEGORIES } from '../../constants/categories'
-import { calcCategoryCalc } from '../../helpers/categories';
+import { CATEGORIES } from 'constants/categories'
+import { calcCategoryCalc } from 'helpers/categories';
 
 import './addWater.css'
 

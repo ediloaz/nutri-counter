@@ -6,12 +6,12 @@ import Grid from "@mui/material/Unstable_Grid2"
 import { Button, Typography, Paper, Link } from "@mui/material"
 import { SupervisedUserCircle, Info } from "@mui/icons-material"
 
-import TopHome from "../../components/TopHome/TopHome"
-import CircularProgress from "../../components/CircularProgress/CircularProgress"
-import { getBottomBackground } from "../../helpers/images"
-import { getRandomMotivationalPhrase } from "../../helpers/phrases"
-import { CATEGORIES_OBJECT } from "../../constants/categories"
-import { AppContext } from "../../context/AppContext"
+import TopHome from "components/TopHome/TopHome"
+import CircularProgress from "components/CircularProgress/CircularProgress"
+import { getBottomBackground } from "helpers/images"
+import { getRandomMotivationalPhrase } from "helpers/phrases"
+import { CATEGORIES_OBJECT } from "constants/categories"
+import { AppContext } from "context/AppContext"
 
 import "./main.css"
 

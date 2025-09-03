@@ -13,12 +13,12 @@ import {
   TimelineDot,
 } from "@mui/lab";
 
-import { CATEGORIES } from "../../constants/categories";
-import BackButton from "../../components/BackButton/BackButton";
-import { AppContext } from "../../context/AppContext";
+import { CATEGORIES } from "constants/categories";
+import BackButton from "components/BackButton/BackButton";
+import { AppContext } from "context/AppContext";
 
-import { getCategoryNameById, calcCategoryCalc } from "../../helpers/categories";
-import { FOOD_TIMES } from "../../constants/foodTimes";
+import { getCategoryNameById, calcCategoryCalc } from "helpers/categories";
+import { FOOD_TIMES } from "constants/foodTimes";
 
 import "./history.css";
 

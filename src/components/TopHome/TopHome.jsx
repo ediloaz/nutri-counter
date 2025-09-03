@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import Avatar from "@mui/material/Avatar"
 import Typography from "@mui/material/Typography"
 
-import USERS from "../../constants/users"
-import { getRandomGreeting } from "../../helpers/greetings"
-import { getBottomBackground } from "../../helpers/images"
+import USERS from "constants/users"
+import { getRandomGreeting } from "helpers/greetings"
+import { getBottomBackground } from "helpers/images"
 
 import "./topHome.css"
 

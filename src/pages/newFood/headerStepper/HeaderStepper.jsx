@@ -4,7 +4,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector"
 
-import { hasNonZeroValue } from "../../../helpers/utils"
+import { hasNonZeroValue } from "helpers/utils"
 
 import "./headerStepper.css"
 

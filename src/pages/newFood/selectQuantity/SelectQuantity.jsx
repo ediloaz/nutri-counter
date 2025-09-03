@@ -1,9 +1,9 @@
 import { IconButton, Typography } from '@mui/material';
 import { RemoveCircleOutline as Remove, AddCircleOutline as Add } from '@mui/icons-material';
 
-import { CATEGORIES } from '../../../constants/categories';
+import { CATEGORIES } from 'constants/categories';
 
-import CaloriesItemList from "../../../components/CaloriesItemList/CaloriesItemList"
+import CaloriesItemList from "components/CaloriesItemList/CaloriesItemList"
 
 import './selectQuantity.css'
 

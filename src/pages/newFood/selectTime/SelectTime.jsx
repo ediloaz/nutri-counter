@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Unstable_Grid2'; 
 import { Paper } from '@mui/material';
 
-import { FOOD_TIMES } from "../../../constants/foodTimes";
+import { FOOD_TIMES } from "constants/foodTimes";
 
 import './selectTime.css'
 

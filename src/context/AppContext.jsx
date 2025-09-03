@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
-import Firebase from '../services/firebase';
-import { createDailyIfNotExists, addNewFood } from '../helpers/firebase';
-import { getNameCurrentDaily } from '../helpers/daily';
+import Firebase from 'services/firebase';
+import { createDailyIfNotExists, addNewFood } from 'helpers/firebase';
+import { getNameCurrentDaily } from 'helpers/daily';
 
 export const AppContext = createContext();
 

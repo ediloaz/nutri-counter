@@ -12,15 +12,15 @@ import {
 } from "@mui/material";
 import { SentimentSatisfiedAlt, AccessAlarm, Scale, WbSunny } from "@mui/icons-material";
 
-import BackButton from "../../components/BackButton/BackButton";
+import BackButton from "components/BackButton/BackButton";
 
-import USERS from "../../constants/users";
-import { EMPTY_DAILY } from "../../constants/daily";
-import { FOOD_TIMES } from "../../constants/foodTimes";
-import { CATEGORIES } from "../../constants/categories";
-import { AppContext } from "../../context/AppContext";
+import USERS from "constants/users";
+import { EMPTY_DAILY } from "constants/daily";
+import { FOOD_TIMES } from "constants/foodTimes";
+import { CATEGORIES } from "constants/categories";
+import { AppContext } from "context/AppContext";
 
-import { hasNonZeroValue, findPositionOfTrue } from "../../helpers/utils";
+import { hasNonZeroValue, findPositionOfTrue } from "helpers/utils";
 
 import SelectTime from "./selectTime/SelectTime";
 import SelectQuantity from "./selectQuantity/SelectQuantity";

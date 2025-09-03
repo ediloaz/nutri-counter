@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography"
 
-import BackButton from "../BackButton/BackButton";
+import BackButton from "components/BackButton/BackButton";
 
 import "./header.css"
 
