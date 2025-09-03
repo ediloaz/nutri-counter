@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { AppContext } from '../../context/AppContext';
 
 import { LinearProgress } from '@mui/material';
 
@@ -23,13 +24,9 @@ const Categorie = ({ id, name, planned, currentDaily }) => {
   )
 }
 
-const Summary = ({
-  plann,
-  daily,
-  getDaily,
-  getPlanns,
-  changeScreen,
-}) => {
+const Summary = () => {
+  const { plann, daily, getDaily, getPlanns } = useContext(AppContext);
+
   const [plannData, setPlannData] = useState({})
   const [dailyData, setDailyData] = useState({})
 
@@ -49,7 +46,7 @@ const Summary = ({
 
   return (
     <div className="Summary">
-      <BackButton changeScreen={changeScreen} screen="main" />
+      <BackButton />
       <div className="categories">
         {CATEGORIES.map((categorie) => 
           <Categorie 

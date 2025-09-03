@@ -4,15 +4,12 @@ import BackButton from "../BackButton/BackButton";
 
 import "./header.css"
 
-const Header = ({ title, changeScreen }) => {
+const Header = ({ title }) => {
   return (
     <div className="HeaderRounded">
-      <BackButton
-        changeScreen={changeScreen}
-        screen="main"
-      />
+      <BackButton />
       <Typography className="title" textAlign="center">
-        Finanzas en casa
+        {title}
       </Typography>
     </div>
   )

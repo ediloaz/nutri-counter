@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@mui/material';
 import { Face2, Face4 } from '@mui/icons-material';
 
 import BackButton from "../../components/BackButton/BackButton"
+import { AppContext } from '../../context/AppContext';
 
 import './changeUser.css'
 
@@ -18,11 +20,9 @@ const User = ({ id, icon, name, lastPlann, changeUser }) => {
   )
 }
 
-const ChangeUser = ({
-  getUsers,
-  changeUser,
-  changeScreen,
-}) => {
+const ChangeUser = () => {
+  const { getUsers, changeUser } = useContext(AppContext);
+  const navigate = useNavigate();
   const [users, setUsers] = useState([])
 
   useEffect(() => {
@@ -36,12 +36,12 @@ const ChangeUser = ({
 
   const _changeUser = (userId, lastPlann) => {
     changeUser(userId, lastPlann)
-    changeScreen('main')
+    navigate('/')
   }
 
   return (
     <div className="ChangeUser">
-      <BackButton changeScreen={changeScreen} screen="main" />
+      <BackButton />
       <div className="users">
         {users.map((user) =>
           <User

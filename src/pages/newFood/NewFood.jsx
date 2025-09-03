@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { sumBy } from 'lodash';
 
 import {
@@ -17,6 +18,7 @@ import USERS from "../../constants/users";
 import { EMPTY_DAILY } from "../../constants/daily";
 import { FOOD_TIMES } from "../../constants/foodTimes";
 import { CATEGORIES } from "../../constants/categories";
+import { AppContext } from "../../context/AppContext";
 
 import { hasNonZeroValue, findPositionOfTrue } from "../../helpers/utils";
 
@@ -165,15 +167,10 @@ const _totalCaloriesByNewFood = (currentFood) => {
   return totalCaloriesCategories + totalCaloriesCustomFoods;
 }
 
-const NewFood = ({
-  user,
-  plann,
-  daily,
-  getDaily,
-  getPlanns,
-  addNewFood,
-  changeScreen,
-}) => {
+const NewFood = () => {
+  const { user, plann, daily, getDaily, getPlanns, addNewFood } = useContext(AppContext);
+  const navigate = useNavigate();
+
   const [plannData, setPlannData] = useState({});
   const [dailyData, setDailyData] = useState({});
   const [currentFood, setCurrentFood] = useState(EMPTY_DAILY);
@@ -215,7 +212,7 @@ const NewFood = ({
       current: newCurrent,
       history: dailyData?.history || [],
     });
-    changeScreen("main");
+    navigate("/");
   };
 
   const onChangeFoodTime = (id) => {
@@ -262,11 +259,7 @@ const NewFood = ({
   return (
     <div className={`NewFood step${step}`}>
       <div className="NewFoodHeader">
-        <BackButton
-          changeScreen={changeScreen}
-          screen="main"
-          disabled={step > 1}
-        />
+        <BackButton disabled={step > 1} />
         <HeaderStepper
           handleScroll={handleScroll}
           foodTime={foodTime}

@@ -1,12 +1,14 @@
 import { IconButton } from '@mui/material'
 import { ArrowBackIosNew } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
 
 import './backButton.css'
 
-const BackButton = ({ changeScreen, screen, disabled }) => {
+const BackButton = ({ to = '/', disabled }) => {
+    const navigate = useNavigate();
     return (
         <div className='BackButton'>
-            <IconButton onClick={() => changeScreen(screen)} component="label" disabled={disabled}>
+            <IconButton onClick={() => navigate(to)} component="label" disabled={disabled}>
                 <ArrowBackIosNew  />
             </IconButton>
         </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import moment from "moment";
 import { sumBy, orderBy, isEmpty } from "lodash";
 
@@ -16,6 +16,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 import { CATEGORIES } from "../../constants/categories";
 import Header from "../../components/Header/Header";
+import { AppContext } from "../../context/AppContext";
 
 import { getCategoryNameById, calcCategoryCalc } from "../../helpers/categories";
 import { FOOD_TIMES } from "../../constants/foodTimes";
@@ -138,7 +139,8 @@ const History = () => {
   )
 }
 
-const HouseFinances = ({ plann, daily, getDaily, getPlanns, changeScreen }) => {
+const HouseFinances = () => {
+  const { plann, daily, getDaily, getPlanns } = useContext(AppContext);
   const [dailyHistory, setDailyHistory] = useState();
 
 
@@ -165,7 +167,7 @@ const HouseFinances = ({ plann, daily, getDaily, getPlanns, changeScreen }) => {
 
   return (
     <div className="HouseFinances">
-      <Header title="Finanzas de casa" changeScreen={changeScreen} />
+      <Header title="Finanzas de casa" />
       <div className="Body">
         <FormToAdd />
         <History />

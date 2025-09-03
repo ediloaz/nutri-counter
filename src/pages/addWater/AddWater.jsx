@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 
 import { LinearProgress } from '@mui/material';
 
 import BackButton from "../../components/BackButton/BackButton"
+import { AppContext } from '../../context/AppContext';
 
 import { CATEGORIES } from '../../constants/categories'
 import { calcCategoryCalc } from '../../helpers/categories';
@@ -23,13 +24,9 @@ const Categorie = ({ id, name, planned, currentDaily }) => {
   )
 }
 
-const Summary = ({
-  plann,
-  daily,
-  getDaily,
-  getPlanns,
-  changeScreen,
-}) => {
+const AddWater = () => {
+  const { plann, daily, getDaily, getPlanns } = useContext(AppContext);
+
   const [plannData, setPlannData] = useState({})
   const [dailyData, setDailyData] = useState({})
 
@@ -50,14 +47,11 @@ const Summary = ({
   return (
     <div className="AddWater">
       <div className="Header">
-        <BackButton
-          changeScreen={changeScreen}
-          screen="main"
-        />
+        <BackButton />
       </div>
       <h1>Pronto, mamoris</h1>
     </div>
   );
 }
 
-export default Summary
+export default AddWater

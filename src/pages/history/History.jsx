@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import moment from "moment";
 import { sumBy, orderBy, isEmpty } from "lodash";
 
@@ -15,6 +15,7 @@ import {
 
 import { CATEGORIES } from "../../constants/categories";
 import BackButton from "../../components/BackButton/BackButton";
+import { AppContext } from "../../context/AppContext";
 
 import { getCategoryNameById, calcCategoryCalc } from "../../helpers/categories";
 import { FOOD_TIMES } from "../../constants/foodTimes";
@@ -108,7 +109,8 @@ const HistoryTimelineItem = ({
   );
 };
 
-const History = ({ plann, daily, getDaily, getPlanns, changeScreen }) => {
+const History = () => {
+  const { plann, daily, getDaily, getPlanns } = useContext(AppContext);
   const [dailyHistory, setDailyHistory] = useState();
 
   var nextFlatColor;
@@ -136,7 +138,7 @@ const History = ({ plann, daily, getDaily, getPlanns, changeScreen }) => {
 
   return (
     <div className="History">
-      <BackButton changeScreen={changeScreen} screen="main" />
+      <BackButton />
       <span className="title">Historial</span>
       <Typography className="prettyPhrase" component="span" variant="body1">
         {isEmptyHistory ? (

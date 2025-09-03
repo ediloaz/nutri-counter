@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import { sumBy, get } from 'lodash'
 
 import Grid from "@mui/material/Unstable_Grid2"
@@ -10,6 +11,7 @@ import CircularProgress from "../../components/CircularProgress/CircularProgress
 import { getBottomBackground } from "../../helpers/images"
 import { getRandomMotivationalPhrase } from "../../helpers/phrases"
 import { CATEGORIES_OBJECT } from "../../constants/categories"
+import { AppContext } from "../../context/AppContext"
 
 import "./main.css"
 
@@ -56,7 +58,10 @@ const CaloriesSummary = ({ bottomBG, plannData, dailyData }) => {
   )
 }
 
-const Main = ({ user, changeScreen, daily, plann, getPlanns, getDaily }) => {
+const Main = () => {
+  const { user, daily, plann, getPlanns, getDaily } = useContext(AppContext);
+  const navigate = useNavigate();
+
   const [plannData, setPlannData] = useState({})
   const [dailyData, setDailyData] = useState({})
 
@@ -82,31 +87,31 @@ const Main = ({ user, changeScreen, daily, plann, getPlanns, getDaily }) => {
       id: "addFood",
       emoji: "🥣",
       title: "Agregar comida",
-      onClick: () => changeScreen("newFood"),
+      onClick: () => navigate("/new-food"),
     },
     {
       id: "todayFood",
       emoji: "📅",
       title: "¿Qué he comido hoy?",
-      onClick: () => changeScreen("summary"),
+      onClick: () => navigate("/summary"),
     },
     {
       id: "todayFood",
       emoji: "📜",
       title: "Historial de comidas de hoy",
-      onClick: () => changeScreen("history"),
+      onClick: () => navigate("/history"),
     },
     {
       id: "addWater",
       emoji: "💦",
       title: "Agregar agua",
-      onClick: () => changeScreen("addWater"),
+      onClick: () => navigate("/add-water"),
     },
     {
       id: "houseFinances",
       emoji: "💰",
       title: "Finanzas de casa",
-      onClick: () => changeScreen("houseFinances"),
+      onClick: () => navigate("/house-finances"),
     },
   ]
 
@@ -133,7 +138,7 @@ const Main = ({ user, changeScreen, daily, plann, getPlanns, getDaily }) => {
       <Button
         variant="contained"
         className={`bottomButton ${bottomBG?.id}`}
-        onClick={() => changeScreen("changeUser")}
+        onClick={() => navigate("/change-user")}
       >
         {/* PUEDO EXPANDIR EL CONTENDIDO CON UN ACCORDION, ya que su heigt es peque */}
         <SupervisedUserCircle />
